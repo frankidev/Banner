@@ -14,8 +14,7 @@ imgArray[2].src = 'data/3.jpg';
     SetTime(imgArray[1].src, 6000);
     SetTime(imgArray[2].src, 7500);
     SetTime(imgArray[0].src, 9000);
-
-        return;
+    return;
 })();
 
 function SetTime(src, time) {
