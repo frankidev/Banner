@@ -1,30 +1,26 @@
-ban = new Array(9);
-ban[0]= "data/2.jpg";
-ban[1]= "data/3.jpg";
-ban[2]= "data/1.jpg";
-ban[3]= "data/5.jpg";
-ban[4]= "data/6.jpg";
-ban[5]= "data/4.jpg";
-ban[6]= "data/8.jpg";
-ban[7]= "data/9.jpg";
-ban[8]= "data/7.jpg";
+var imgArray = new Array();
+imgArray[0] = new Image();
+imgArray[0].src = 'data/1.jpg';
+imgArray[1] = new Image();
+imgArray[1].src = 'data/2.jpg';
+imgArray[2] = new Image();
+imgArray[2].src = 'data/3.jpg';
 
-var contador = 0;
-var timer = 1500;
+(function nextImage(element = 'img') {
+    var img = document.getElementById(element);
 
-function banner(){
-    contador = contador++;
-    contador = contador % 9;
-    document.banner.src = ban[contador];
-     setTimeout("banner()",timer);
+        SetTime(imgArray[1].src, 1500);
+        SetTime(imgArray[2].src, 3000);
+        SetTime(imgArray[0].src, 4500);
+        SetTime(imgArray[1].src, 6000);
+        SetTime(imgArray[2].src, 7500);
+        SetTime(imgArray[0].src, 9000);
 
- if (ban[contador] = ban[8] ){
-        clearTimeout(timer);
-    }
+        return;
+})();
 
-    console.log(ban[contador++]);
-    }
-
-
-
-
+function SetTime(src, time) {
+    setTimeout(() => {
+        img.src = src;
+    }, time);
+}
